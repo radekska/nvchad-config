@@ -249,9 +249,19 @@ local plugins = {
       end, 100)
     end,
   },
+  {
+    "python-rope/ropevim",
+    event = "BufRead",
+    build = "pip install ropevim",
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 }
 
 return plugins
-
---
--- -- function for adding two integers

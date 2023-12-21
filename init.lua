@@ -3,6 +3,8 @@
 -- vim.o.foldlevelstart = 99
 -- vim.o.foldenable = true
 local vim = vim
+-- vim.g.loaded_python3_provider = nil
+-- vim.g.python3_host_prog="/opt/homebrew/bin/python3"
 local opt = vim.opt
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
