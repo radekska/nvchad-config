@@ -13,7 +13,7 @@ local sources = {
   b.formatting.stylua,
 
   -- JavaScript
-  b.formatting.prettier.with { extra_args = { "--print-width", line_length, "--tab-width", 4 } },
+  b.formatting.prettier.with { extra_args = { "--print-width", line_length, "--tab-width", 2 } },
 
   -- XML
   b.formatting.xmlformat,
@@ -26,7 +26,7 @@ local sources = {
   b.code_actions.gomodifytags,
 
   -- Python
-  b.formatting.ruff.with { args = { "format", "--stdin-filename", "$FILENAME", "-" } },
+  b.formatting.ruff.with { args = { "format", "--line-length", line_length, "--stdin-filename", "$FILENAME", "-" } },
   b.formatting.autoflake.with { extra_args = { "--remove-all-unused-imports", "--in-place" } },
   b.formatting.isort.with {
     extra_args = {
